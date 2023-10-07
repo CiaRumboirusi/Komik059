@@ -1,5 +1,4 @@
 <?php
-include "inc/Connection.php";
 class Mahasiswa
 {
     protected $conn;
@@ -11,7 +10,7 @@ class Mahasiswa
 
     function tampil(): array
     {
-        $string = "SELECT * FROM mahasiswa";
+        $string = "SELECT mahasiswa.*, jurusan.nama_jurusan FROM mahasiswa LEFT JOIN jurusan on jurusan.id_jurusan=mahasiswa.id_jurusan";
         $sql = $this->conn->conn->prepare($string);
         $sql->execute();
         $data = [];
@@ -23,7 +22,8 @@ class Mahasiswa
     function tambah($data)
     {
         try {
-            $string = "INSERT INTO mahasiswa (nim, nama, alamat) value(:npm, :nama, :alamat;)";
+            $string = "INSERT INTO mahasiswa (npm, nama_mahasiswa, gender, no_telp, alamat, id_jurusan) 
+            value(:npm, :nama_mahasiswa, :gender, :no_telp, :alamat, :id_jurusan)";
             $sql = $this->conn->conn->prepare($string);
             $sql->execute($data);
             return true;

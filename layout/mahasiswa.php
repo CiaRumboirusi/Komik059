@@ -1,4 +1,5 @@
 <?php
+include "inc/Connection.php";
 include "app/Mahasiswa.php";
 $mhs = new Mahasiswa();
 $data = $mhs->tampil();
@@ -18,7 +19,7 @@ $data = $mhs->tampil();
                     <td>JENIS KELAMIN</td>
                     <td>TELP/HP</td>
                     <td>ALAMAT</td>
-                    <td>ID_JURUSAN</td>
+                    <td>JURUSAN</td>
                 </tr>
                 <?php foreach ($data as $key => $item) : ?>
                     <tr>
@@ -28,7 +29,7 @@ $data = $mhs->tampil();
                         <td><?= $item['gender']; ?></td>
                         <td><?= $item['no_telp']; ?></td>
                         <td><?= $item['alamat']; ?></td>
-                        <td><?= $item['id_jurusan']; ?></td>
+                        <td><?= $item['nama_jurusan']; ?></td>
                     </tr>
                     <?php endforeach; ?>
             </table>

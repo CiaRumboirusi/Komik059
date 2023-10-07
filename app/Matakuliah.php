@@ -1,5 +1,5 @@
 <?php
-class Jurusan{
+class Matakuliah{
     protected $conn;
 
     public function __construct() {
@@ -7,7 +7,7 @@ class Jurusan{
     }
 
     function tampil() : array {
-        $string = "SELECT * FROM jurusan";
+        $string = "SELECT matakuliah.*, jurusan.nama_jurusan FROM matakuliah LEFT JOIN jurusan on jurusan.id_jurusan=matakuliah.id_jurusan";
         $sql = $this->conn->conn->prepare($string);
         $sql->execute();
         $data = [];
@@ -18,7 +18,7 @@ class Jurusan{
     }
     function tambah($data) {
         try {
-            $string = "INSERT INTO jurusan (nama_jurusan) value(:nama_jurusan)";
+            $string = "INSERT INTO matakuliah (sks, nama_matakuliah, id_jurusan) value(:sks, :nama_matakuliah, :id_jurusan)";
             $sql = $this->conn->conn->prepare($string);
             $sql->execute($data);
             return true;

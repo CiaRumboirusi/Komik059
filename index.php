@@ -16,10 +16,13 @@
                     <a href="/komik059" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/komik059/index.php/mahasiswa" class="nav-link">mahasiswa</a>
+                    <a href="/komik059/index.php/mahasiswa" class="nav-link">Mahasiswa</a>
                 </li>
                 <li class="nav-item">
                     <a href="/komik059/index.php/jurusan" class="nav-link">Jurusan</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/komik059/index.php/matakuliah" class="nav-link">Matakuliah</a>
                 </li>
             </ul>
         </nav>
@@ -46,6 +49,12 @@
                             break;
                         case $me . '/index.php/jurusan/add';
                             require "layout/tambah_jurusan.php";
+                            break;
+                        case $me . '/index.php/matakuliah';
+                            require "layout/matakuliah.php";
+                            break;
+                        case $me . '/index.php/matakuliah/add';
+                            require "layout/tambah_matakuliah.php";
                             break;
                         default:
                             http_response_code(404);

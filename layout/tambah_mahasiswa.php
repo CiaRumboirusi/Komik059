@@ -9,7 +9,7 @@ $data = $jur->tampil();
             Tambah Mahasiswa
         </div>
         <div class="card-body">
-            <form action="" method="post">
+            <form action="/komik059/app/proses.php" method="post">
                 <div class="form-group">
                     <label for="">NPM</label>
                     <input type="text" class="form-control" name="npm">
@@ -36,25 +36,16 @@ $data = $jur->tampil();
                             <option value="<?= $item['id_jurusan'] ?>"><?= $item['nama_jurusan'] ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <input type="text" class="form-control" name="no_telp">
                 </div>
                 <div class="form-group">
                     <label for="">Alamat</label>
                     <input type="text" class="form-control" name="alamat" rows="3"></textarea>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                    <button type="submit" name="tambah_mahasiswa" class="btn btn-primary btn-sm">Simpan</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include "app/Mahasiswa.php";
-    $mhs = new Mahasiswa();
-    $mhs->tambah($_POST);
-    header("Locantion: http://localhost/index.php/komik059/mahasiswa");
-}
-?>
