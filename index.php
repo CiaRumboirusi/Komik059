@@ -24,6 +24,9 @@
                 <li class="nav-item">
                     <a href="/komik059/index.php/matakuliah" class="nav-link">Matakuliah</a>
                 </li>
+                <li class="nav-item">
+                    <a href="/komik059/index.php/dosen" class="nav-link">Dosen</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -55,6 +58,12 @@
                             break;
                         case $me . '/index.php/matakuliah/add';
                             require "layout/tambah_matakuliah.php";
+                            break;
+                            case $me . '/index.php/dosen';
+                            require "layout/dosen.php";
+                            break;
+                        case $me . '/index.php/dosen/add';
+                            require "layout/tambah_dosen.php";
                             break;
                         default:
                             http_response_code(404);

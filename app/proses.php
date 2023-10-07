@@ -36,5 +36,18 @@ if (isset($_POST['tambah_mahasiswa'])) {
     ];
     // Proses Tambah
     $mat->tambah($data);
-    header("Location: http://localhost/komik059/index.php/matakuliah");
+    header("Location: http://localhost/komik059/index.php/dosen");
+    
+}else if (isset($_POST['tambah_dosen'])) {
+    include "Dosen.php";
+    $dsn = new Dosen();
+    // Mapping data
+    $data = [
+        "nidn"=>$_POST['nidn'],
+        "nama_dosen"=>$_POST['nama_dosen'],
+        "alamat"=>$_POST['alamat'],
+        "telp"=>$_POST['telp']
+    ];
+    $dsn->tambah($data);
+    header("Location: http://localhost/komik059/index.php/dosen");
 }
