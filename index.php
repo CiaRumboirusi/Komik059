@@ -59,7 +59,7 @@
                         case $me . '/index.php/matakuliah/add';
                             require "layout/tambah_matakuliah.php";
                             break;
-                            case $me . '/index.php/dosen';
+                        case $me . '/index.php/dosen';
                             require "layout/dosen.php";
                             break;
                         case $me . '/index.php/dosen/add';
